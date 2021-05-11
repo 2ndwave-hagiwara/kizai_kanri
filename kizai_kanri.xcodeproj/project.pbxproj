@@ -15,6 +15,10 @@
 		3E13C12C2648CC2600AAA249 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E13C12A2648CC2600AAA249 /* LaunchScreen.storyboard */; };
 		3E13C1372648CC2600AAA249 /* kizai_kanriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13C1362648CC2600AAA249 /* kizai_kanriTests.swift */; };
 		3E13C1422648CC2700AAA249 /* kizai_kanriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13C1412648CC2700AAA249 /* kizai_kanriUITests.swift */; };
+		3EA5140C26492B9800ACE542 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5140B26492B9800ACE542 /* NavigationBar.swift */; };
+		3EA5140E26492BFA00ACE542 /* MainContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5140D26492BFA00ACE542 /* MainContent.swift */; };
+		3EA5141026492C2B00ACE542 /* HamburgerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5140F26492C2B00ACE542 /* HamburgerMenu.swift */; };
+		3EA51417264A4C7800ACE542 /* kizai_kanri.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3EA51415264A4C7700ACE542 /* kizai_kanri.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		3E13C13D2648CC2600AAA249 /* kizai_kanriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kizai_kanriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E13C1412648CC2700AAA249 /* kizai_kanriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kizai_kanriUITests.swift; sourceTree = "<group>"; };
 		3E13C1432648CC2700AAA249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EA5140B26492B9800ACE542 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		3EA5140D26492BFA00ACE542 /* MainContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContent.swift; sourceTree = "<group>"; };
+		3EA5140F26492C2B00ACE542 /* HamburgerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenu.swift; sourceTree = "<group>"; };
+		3EA51416264A4C7800ACE542 /* kizai_kanri.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kizai_kanri.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,7 @@
 		3E13C1132648CC2400AAA249 = {
 			isa = PBXGroup;
 			children = (
+				3EA51415264A4C7700ACE542 /* kizai_kanri.xcdatamodeld */,
 				3E13C11E2648CC2400AAA249 /* kizai_kanri */,
 				3E13C1352648CC2600AAA249 /* kizai_kanriTests */,
 				3E13C1402648CC2700AAA249 /* kizai_kanriUITests */,
@@ -106,6 +115,9 @@
 				3E13C12A2648CC2600AAA249 /* LaunchScreen.storyboard */,
 				3E13C12D2648CC2600AAA249 /* Info.plist */,
 				3E13C1272648CC2600AAA249 /* Preview Content */,
+				3EA5140B26492B9800ACE542 /* NavigationBar.swift */,
+				3EA5140D26492BFA00ACE542 /* MainContent.swift */,
+				3EA5140F26492C2B00ACE542 /* HamburgerMenu.swift */,
 			);
 			path = kizai_kanri;
 			sourceTree = "<group>";
@@ -269,7 +281,11 @@
 			files = (
 				3E13C1202648CC2400AAA249 /* AppDelegate.swift in Sources */,
 				3E13C1222648CC2400AAA249 /* SceneDelegate.swift in Sources */,
+				3EA51417264A4C7800ACE542 /* kizai_kanri.xcdatamodeld in Sources */,
+				3EA5141026492C2B00ACE542 /* HamburgerMenu.swift in Sources */,
 				3E13C1242648CC2400AAA249 /* ContentView.swift in Sources */,
+				3EA5140E26492BFA00ACE542 /* MainContent.swift in Sources */,
+				3EA5140C26492B9800ACE542 /* NavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +610,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3EA51415264A4C7700ACE542 /* kizai_kanri.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3EA51416264A4C7800ACE542 /* kizai_kanri.xcdatamodel */,
+			);
+			currentVersion = 3EA51416264A4C7800ACE542 /* kizai_kanri.xcdatamodel */;
+			path = kizai_kanri.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3E13C1142648CC2400AAA249 /* Project object */;
 }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19H1030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Categories" representedClassName="Categories" syncable="YES">
+        <attribute name="category_name" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="EquipmentRelationships" representedClassName="EquipmentRelationships" syncable="YES">
+        <attribute name="child_equipment_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="parent_equipment_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="childEquipents" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Equipments"/>
+        <relationship name="parentEquipment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Equipments"/>
+    </entity>
+    <entity name="Equipments" representedClassName="Equipments" syncable="YES">
+        <attribute name="category_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="equipment_type" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="maker_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="management_number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="model_name" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="os" optional="YES" attributeType="String"/>
+        <attribute name="purchase_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="usage" optional="YES" attributeType="String"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="categories" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories"/>
+        <relationship name="makers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Makers"/>
+        <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users"/>
+    </entity>
+    <entity name="Images" representedClassName="Images" syncable="YES">
+        <attribute name="equipment_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="file_name" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="equipments" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Equipments"/>
+    </entity>
+    <entity name="MacAddresses" representedClassName="MacAddresses" syncable="YES">
+        <attribute name="equipment_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="mac_address" optional="YES" attributeType="String"/>
+        <relationship name="equipments" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Equipments"/>
+    </entity>
+    <entity name="Makers" representedClassName="Makers" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="maker_name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="first_name" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="last_name" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Makers" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Users" positionX="-54" positionY="0" width="128" height="103"/>
+        <element name="Categories" positionX="-36" positionY="36" width="128" height="73"/>
+        <element name="EquipmentRelationships" positionX="-18" positionY="45" width="128" height="118"/>
+        <element name="Equipments" positionX="0" positionY="63" width="128" height="253"/>
+        <element name="Images" positionX="18" positionY="144" width="128" height="103"/>
+        <element name="MacAddresses" positionX="36" positionY="153" width="128" height="103"/>
+    </elements>
+</model>
