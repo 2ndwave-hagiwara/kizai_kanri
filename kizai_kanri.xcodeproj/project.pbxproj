@@ -15,6 +15,7 @@
 		3E13C12C2648CC2600AAA249 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E13C12A2648CC2600AAA249 /* LaunchScreen.storyboard */; };
 		3E13C1372648CC2600AAA249 /* kizai_kanriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13C1362648CC2600AAA249 /* kizai_kanriTests.swift */; };
 		3E13C1422648CC2700AAA249 /* kizai_kanriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13C1412648CC2700AAA249 /* kizai_kanriUITests.swift */; };
+		985648D6264B688D00C453D2 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648D5264B688D00C453D2 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3E13C13D2648CC2600AAA249 /* kizai_kanriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kizai_kanriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E13C1412648CC2700AAA249 /* kizai_kanriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kizai_kanriUITests.swift; sourceTree = "<group>"; };
 		3E13C1432648CC2700AAA249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		985648D5264B688D00C453D2 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		3E13C1132648CC2400AAA249 = {
 			isa = PBXGroup;
 			children = (
+				985648D5264B688D00C453D2 /* MenuView.swift */,
 				3E13C11E2648CC2400AAA249 /* kizai_kanri */,
 				3E13C1352648CC2600AAA249 /* kizai_kanriTests */,
 				3E13C1402648CC2700AAA249 /* kizai_kanriUITests */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E13C1202648CC2400AAA249 /* AppDelegate.swift in Sources */,
+				985648D6264B688D00C453D2 /* MenuView.swift in Sources */,
 				3E13C1222648CC2400AAA249 /* SceneDelegate.swift in Sources */,
 				3E13C1242648CC2400AAA249 /* ContentView.swift in Sources */,
 			);
