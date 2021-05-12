@@ -30,12 +30,10 @@ struct ContentView: View {
                             Image(systemName: "list.bullet")
                         }
                     }
-                    .padding(.horizontal)
-                    Divider()
-                    Spacer()
-                    Text("This is main contents")
-                        .font(.largeTitle)
-                    Spacer()
+//                    .padding(.horizontal)
+//                    Divider()
+//                    Spacer()
+                    ShowEquipmentView()
                 }
                 .background(Color.white)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
