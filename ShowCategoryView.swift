@@ -10,29 +10,11 @@ import Foundation
 import SwiftUI
 
 struct ShowCategoryView: View {
-    var body: some View {
-            ScrollView(.vertical) {
-                VStack(spacing: 0) {
-                    ScrollView(.horizontal) {
-                        HStack {
-                            ForEach(0..<51) { i in
-                                Image(systemName: "\(i).square")
-                                    .font(.system(size: 100))
-                                    .frame(width: 130, height: 130)
-                            }
-                        }
-                    }
-     
-                    ForEach(0..<17) { i in
-                        HStack(spacing: 0) {
-                            ForEach(0..<3) { ii in
-                                Image(systemName: "\(i * 3 + ii).circle")
-                                    .font(.system(size: 100))
-                                    .frame(width: 130, height: 130)
-                                    .border(Color.gray, width: 1)
-                            }
-                        }
-                    }
+    let fruits = ["PC", "キーボード", "マウス", "モニター", "ACアダブタ", "電源コード", "ディスプレイケーブル", "外付けHDD・SSD", "USBメモリ", "ライトニングケーブル", "ダブレット", "スマホ", "その他機器"]
+        var body: some View {
+            List {
+                ForEach(0 ..< fruits.count) { index in
+                    Text(fruits[index])
                 }
             }
         }

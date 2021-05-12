@@ -10,13 +10,23 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isOpenSideMenu: Bool = false
-    @State var text = "Hello, World!"
+    @State var text = "機材一覧"
     @State var menu = ""
     var body: some View {
         ZStack{
             NavigationView {
-                Text(text)
-                    .navigationBarTitle("メイン画面")
+                Group {
+                    if self.menu == "category" {
+                        ShowCategoryView()
+                    } else if self.menu == "maker" {
+                        Text(text)
+                    } else if self.menu == "user" {
+                        Text(text)
+                    } else {
+                        ShowEquipmentView()
+                    }
+                }
+                    .navigationBarTitle(Text(text))
                     .navigationBarItems(leading: (
                         Button(action: {
                             self.isOpenSideMenu.toggle()
@@ -29,11 +39,6 @@ struct ContentView: View {
             SideMenuView(isOpen: $isOpenSideMenu, text: $text, menu: $menu)
                 .edgesIgnoringSafeArea(.all)
             
-        }
-        Group {
-            if self.menu == "category" {
-                ShowCategoryView()
-            }
         }
     }
 }
