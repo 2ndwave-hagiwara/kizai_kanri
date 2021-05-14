@@ -10,12 +10,17 @@ import Foundation
 import SwiftUI
 
 struct ShowCategoryView: View {
-
+    @Environment(\.managedObjectContext) private var context
+  
+     /// データ取得処理
+    @FetchRequest(
+            entity: Category.entity(),
+            sortDescriptors: [NSSortDescriptor(keyPath: \Category.objectID, ascending: true)],
+            predicate: nil
+        ) private var categories: FetchedResults<Category>
     @State private var showingModal = false
-    let categories = ["PC", "キーボード", "マウス", "モニター", "ACアダブタ", "電源コード", "ディスプレイケーブル", "外付けHDD・SSD", "USBメモリ", "ライトニングケーブル", "ダブレット", "スマホ", "その他機器"]
         var body: some View {
             HStack(spacing: 50){
-    //            Text("新規作成")
                 Spacer()
                 Button("+", action: {
                     self.showingModal.toggle()
@@ -23,9 +28,10 @@ struct ShowCategoryView: View {
                     CategoryModalView()
                 }
             }
+
             List {
-                ForEach(0 ..< categories.count) { index in
-                    Text(categories[index])
+                ForEach(categories) { category in
+                    Text("\(category.categoryName!)")
                 }
             }
         }
@@ -43,7 +49,11 @@ struct CategoryModalView: View {
                 }
             }
             .navigationBarTitle("タスク追加")
-            .navigationBarItems(leading: Button("保存") {
+            .navigationBarItems(
+                leading:  Button("戻る") {
+                    presentationMode.wrappedValue.dismiss()
+                },
+                trailing: Button("保存") {
                 /// タスク新規登録処理
                 let newCategory = Category(context: context)
                 newCategory.categoryName = name
@@ -52,6 +62,7 @@ struct CategoryModalView: View {
 
                 /// 現在のViewを閉じる
                 presentationMode.wrappedValue.dismiss()
+                
             })
         }
         }
