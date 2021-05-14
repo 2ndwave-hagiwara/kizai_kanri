@@ -11,13 +11,13 @@ import SwiftUI
 
 struct ShowCategoryView: View {
     @Environment(\.managedObjectContext) private var context
-  
-     /// データ取得処理
+
     @FetchRequest(
-            entity: Category.entity(),
-            sortDescriptors: [NSSortDescriptor(keyPath: \Category.objectID, ascending: true)],
-            predicate: nil
-        ) private var categories: FetchedResults<Category>
+        entity: Category.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Category.objectID, ascending: true)],
+        predicate: nil
+    ) private var categories: FetchedResults<Category>
+
     @State private var showingModal = false
         var body: some View {
             HStack(spacing: 50){
@@ -33,8 +33,16 @@ struct ShowCategoryView: View {
                 ForEach(categories) { category in
                     Text("\(category.categoryName!)")
                 }
+                .onDelete(perform: deleteCategory)
             }
         }
+    
+    func deleteCategory(offsets: IndexSet) {
+        for index in offsets {
+            context.delete(categories[index])
+        }
+        try? context.save()
+    }
 }
 
 struct CategoryModalView: View {
@@ -48,24 +56,20 @@ struct CategoryModalView: View {
                     TextField("カテゴリを入力", text: $name)
                 }
             }
-            .navigationBarTitle("タスク追加")
+            .navigationBarTitle("カテゴリ追加")
             .navigationBarItems(
                 leading:  Button("戻る") {
                     presentationMode.wrappedValue.dismiss()
                 },
                 trailing: Button("保存") {
-                /// タスク新規登録処理
                 let newCategory = Category(context: context)
                 newCategory.categoryName = name
-                
                 try? context.save()
-
-                /// 現在のViewを閉じる
                 presentationMode.wrappedValue.dismiss()
                 
             })
         }
-        }
+    }
 }
 
 //struct ModalView_Previews: PreviewProvider {
