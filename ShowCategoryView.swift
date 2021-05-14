@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 
 struct ShowCategoryView: View {
+
     @State private var showingModal = false
     let categories = ["PC", "キーボード", "マウス", "モニター", "ACアダブタ", "電源コード", "ディスプレイケーブル", "外付けHDD・SSD", "USBメモリ", "ライトニングケーブル", "ダブレット", "スマホ", "その他機器"]
         var body: some View {
@@ -19,7 +20,7 @@ struct ShowCategoryView: View {
                 Button("+", action: {
                     self.showingModal.toggle()
                 }).padding().sheet(isPresented: $showingModal) {
-                    EquipmentModalView()
+                    CategoryModalView()
                 }
             }
             List {
@@ -31,9 +32,29 @@ struct ShowCategoryView: View {
 }
 
 struct CategoryModalView: View {
+    @Environment(\.managedObjectContext) private var context
+    @Environment(\.presentationMode) var presentationMode
+    @State private var name = ""
     var body: some View {
-        Text("Modal View")
-    }
+        NavigationView {
+            Form {
+                Section() {
+                    TextField("カテゴリを入力", text: $name)
+                }
+            }
+            .navigationBarTitle("タスク追加")
+            .navigationBarItems(leading: Button("保存") {
+                /// タスク新規登録処理
+                let newCategory = Category(context: context)
+                newCategory.categoryName = name
+                
+                try? context.save()
+
+                /// 現在のViewを閉じる
+                presentationMode.wrappedValue.dismiss()
+            })
+        }
+        }
 }
 
 //struct ModalView_Previews: PreviewProvider {

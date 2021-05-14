@@ -20,6 +20,9 @@
 		985648DA264B8DB200C453D2 /* ShowCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648D9264B8DB200C453D2 /* ShowCategoryView.swift */; };
 		985648DC264BA5D200C453D2 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648DB264BA5D200C453D2 /* SideMenuView.swift */; };
 		985648DE264BA61400C453D2 /* SideMenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648DD264BA61400C453D2 /* SideMenuContentView.swift */; };
+		985648E1264E028600C453D2 /* KizaiKanri.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 985648DF264E028600C453D2 /* KizaiKanri.xcdatamodeld */; };
+		985648E4264E02CB00C453D2 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648E2264E02CB00C453D2 /* Category+CoreDataClass.swift */; };
+		985648E5264E02CB00C453D2 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648E3264E02CB00C453D2 /* Category+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		985648D9264B8DB200C453D2 /* ShowCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategoryView.swift; sourceTree = "<group>"; };
 		985648DB264BA5D200C453D2 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		985648DD264BA61400C453D2 /* SideMenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuContentView.swift; sourceTree = "<group>"; };
+		985648E0264E028600C453D2 /* KizaiKanri.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KizaiKanri.xcdatamodel; sourceTree = "<group>"; };
+		985648E2264E02CB00C453D2 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		985648E3264E02CB00C453D2 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,9 @@
 		3E13C1132648CC2400AAA249 = {
 			isa = PBXGroup;
 			children = (
+				985648E2264E02CB00C453D2 /* Category+CoreDataClass.swift */,
+				985648E3264E02CB00C453D2 /* Category+CoreDataProperties.swift */,
+				985648DF264E028600C453D2 /* KizaiKanri.xcdatamodeld */,
 				985648D7264B6FDC00C453D2 /* ShowEquipmentView.swift */,
 				985648D9264B8DB200C453D2 /* ShowCategoryView.swift */,
 				985648D5264B688D00C453D2 /* MenuView.swift */,
@@ -283,9 +292,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				985648D8264B6FDC00C453D2 /* ShowEquipmentView.swift in Sources */,
+				985648E1264E028600C453D2 /* KizaiKanri.xcdatamodeld in Sources */,
 				985648DC264BA5D200C453D2 /* SideMenuView.swift in Sources */,
+				985648E4264E02CB00C453D2 /* Category+CoreDataClass.swift in Sources */,
 				3E13C1202648CC2400AAA249 /* AppDelegate.swift in Sources */,
 				985648D6264B688D00C453D2 /* MenuView.swift in Sources */,
+				985648E5264E02CB00C453D2 /* Category+CoreDataProperties.swift in Sources */,
 				985648DE264BA61400C453D2 /* SideMenuContentView.swift in Sources */,
 				3E13C1222648CC2400AAA249 /* SceneDelegate.swift in Sources */,
 				3E13C1242648CC2400AAA249 /* ContentView.swift in Sources */,
@@ -614,6 +626,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		985648DF264E028600C453D2 /* KizaiKanri.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				985648E0264E028600C453D2 /* KizaiKanri.xcdatamodel */,
+			);
+			currentVersion = 985648E0264E028600C453D2 /* KizaiKanri.xcdatamodel */;
+			path = KizaiKanri.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3E13C1142648CC2400AAA249 /* Project object */;
 }
