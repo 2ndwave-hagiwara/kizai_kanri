@@ -19,7 +19,7 @@ struct ContentView: View {
                     if self.menu == "category" {
                         ShowCategoryView()
                     } else if self.menu == "maker" {
-                        Text(text)
+                        ShowMakerView()
                     } else if self.menu == "user" {
                         ShowUserView()
                     } else {
