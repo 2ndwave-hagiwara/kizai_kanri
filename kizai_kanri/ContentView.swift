@@ -21,7 +21,7 @@ struct ContentView: View {
                     } else if self.menu == "maker" {
                         Text(text)
                     } else if self.menu == "user" {
-                        Text(text)
+                        ShowUserView()
                     } else {
                         ShowEquipmentView()
                     }
