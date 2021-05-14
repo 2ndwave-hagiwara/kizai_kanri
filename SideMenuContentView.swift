@@ -30,6 +30,7 @@ struct SideMenuContentView: View {
     }
 
     var body: some View {
+        
         HStack {
 //            Image(systemName: systemName)
 //                .foregroundColor(.gray)
