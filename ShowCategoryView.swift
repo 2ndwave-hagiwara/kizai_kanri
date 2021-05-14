@@ -20,21 +20,24 @@ struct ShowCategoryView: View {
 
     @State private var showingModal = false
         var body: some View {
-            HStack(spacing: 50){
-                Spacer()
-                Button("+", action: {
+            NavigationView {
+                List {
+                    ForEach(categories, id: \.self) { category in
+                        NavigationLink(destination: NewEquipmentView(categoryName: category.categoryName!)) {
+                            Text("\(category.categoryName!)")
+                        }
+                    }
+                    .onDelete(perform: deleteCategory)
+                }
+                .navigationBarItems(trailing: Button(action: {
                     self.showingModal.toggle()
-                }).padding().sheet(isPresented: $showingModal) {
+                }, label: {
+                    Text("+")
+                }).sheet(isPresented: $showingModal) {
                     CategoryModalView()
-                }
+                })
             }
-
-            List {
-                ForEach(categories) { category in
-                    Text("\(category.categoryName!)")
-                }
-                .onDelete(perform: deleteCategory)
-            }
+            
         }
     
     func deleteCategory(offsets: IndexSet) {

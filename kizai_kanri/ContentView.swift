@@ -26,8 +26,8 @@ struct ContentView: View {
                         ShowEquipmentView()
                     }
                 }
-                    .navigationBarTitle(Text(text))
-                    .navigationBarItems(leading: (
+                    .navigationBarTitle(Text(text), displayMode: .inline)
+                    .navigationBarItems(trailing: (
                         Button(action: {
                             self.isOpenSideMenu.toggle()
                         }) {
@@ -38,7 +38,7 @@ struct ContentView: View {
 
             SideMenuView(isOpen: $isOpenSideMenu, text: $text, menu: $menu)
                 .edgesIgnoringSafeArea(.all)
-            
+
         }
     }
 }

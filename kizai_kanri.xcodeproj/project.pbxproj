@@ -26,6 +26,7 @@
 		985648EC264E226A00C453D2 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648EA264E226A00C453D2 /* User+CoreDataClass.swift */; };
 		985648ED264E226A00C453D2 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648EB264E226A00C453D2 /* User+CoreDataProperties.swift */; };
 		985648EF264E22D100C453D2 /* ShowUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648EE264E22D100C453D2 /* ShowUserView.swift */; };
+		985648F1264E43F400C453D2 /* NewEquipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648F0264E43F400C453D2 /* NewEquipmentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		985648EA264E226A00C453D2 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		985648EB264E226A00C453D2 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		985648EE264E22D100C453D2 /* ShowUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserView.swift; sourceTree = "<group>"; };
+		985648F0264E43F400C453D2 /* NewEquipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEquipmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				985648E3264E02CB00C453D2 /* Category+CoreDataProperties.swift */,
 				985648DF264E028600C453D2 /* KizaiKanri.xcdatamodeld */,
 				985648D7264B6FDC00C453D2 /* ShowEquipmentView.swift */,
+				985648F0264E43F400C453D2 /* NewEquipmentView.swift */,
 				985648D9264B8DB200C453D2 /* ShowCategoryView.swift */,
 				985648D5264B688D00C453D2 /* MenuView.swift */,
 				985648DB264BA5D200C453D2 /* SideMenuView.swift */,
@@ -313,6 +316,7 @@
 				985648EF264E22D100C453D2 /* ShowUserView.swift in Sources */,
 				985648ED264E226A00C453D2 /* User+CoreDataProperties.swift in Sources */,
 				3E13C1242648CC2400AAA249 /* ContentView.swift in Sources */,
+				985648F1264E43F400C453D2 /* NewEquipmentView.swift in Sources */,
 				985648DA264B8DB200C453D2 /* ShowCategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
