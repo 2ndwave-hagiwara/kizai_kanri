@@ -38,9 +38,28 @@ struct NewEquipmentView: View {
     @State var userSelected = ""
     @State var makerSelected = ""
     
+    @State private var image = UIImage()
+    @State private var isShowPhotoLibrary = false
+    
     var body: some View {
         NavigationView {
             Form {
+                VStack {
+                   Image(uiImage: self.image)
+                       .resizable()
+                       .scaledToFill()
+                       .frame(minWidth: 0, maxWidth: .infinity)
+                       .edgesIgnoringSafeArea(.all)
+                   Button(action: {
+                       self.isShowPhotoLibrary = true
+                   }, label: {
+                       Text("アルバムから選択")
+                           .padding()
+                   })
+               }
+               .sheet(isPresented: $isShowPhotoLibrary, content: {
+                   ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+               })
                 Section(header: Text("必須項目")){
                     TextField("管理番号", text: $managementNumber)
                     Picker(selection: $makerSelected,
