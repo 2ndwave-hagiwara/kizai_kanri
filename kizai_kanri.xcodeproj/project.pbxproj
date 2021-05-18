@@ -30,6 +30,8 @@
 		985648F4264E594200C453D2 /* Maker+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648F2264E594200C453D2 /* Maker+CoreDataClass.swift */; };
 		985648F5264E594200C453D2 /* Maker+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648F3264E594200C453D2 /* Maker+CoreDataProperties.swift */; };
 		985648F7264E596C00C453D2 /* ShowMakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648F6264E596C00C453D2 /* ShowMakerView.swift */; };
+		985648FA264E618000C453D2 /* Equipment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648F8264E618000C453D2 /* Equipment+CoreDataClass.swift */; };
+		985648FB264E618000C453D2 /* Equipment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648F9264E618000C453D2 /* Equipment+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		985648F2264E594200C453D2 /* Maker+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Maker+CoreDataClass.swift"; sourceTree = "<group>"; };
 		985648F3264E594200C453D2 /* Maker+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Maker+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		985648F6264E596C00C453D2 /* ShowMakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMakerView.swift; sourceTree = "<group>"; };
+		985648F8264E618000C453D2 /* Equipment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Equipment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		985648F9264E618000C453D2 /* Equipment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Equipment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 		3E13C1132648CC2400AAA249 = {
 			isa = PBXGroup;
 			children = (
+				985648F8264E618000C453D2 /* Equipment+CoreDataClass.swift */,
+				985648F9264E618000C453D2 /* Equipment+CoreDataProperties.swift */,
 				985648F2264E594200C453D2 /* Maker+CoreDataClass.swift */,
 				985648F3264E594200C453D2 /* Maker+CoreDataProperties.swift */,
 				985648EE264E22D100C453D2 /* ShowUserView.swift */,
@@ -317,12 +323,14 @@
 				985648EC264E226A00C453D2 /* User+CoreDataClass.swift in Sources */,
 				985648DC264BA5D200C453D2 /* SideMenuView.swift in Sources */,
 				985648F7264E596C00C453D2 /* ShowMakerView.swift in Sources */,
+				985648FA264E618000C453D2 /* Equipment+CoreDataClass.swift in Sources */,
 				985648E4264E02CB00C453D2 /* Category+CoreDataClass.swift in Sources */,
 				985648F5264E594200C453D2 /* Maker+CoreDataProperties.swift in Sources */,
 				3E13C1202648CC2400AAA249 /* AppDelegate.swift in Sources */,
 				985648D6264B688D00C453D2 /* MenuView.swift in Sources */,
 				985648E5264E02CB00C453D2 /* Category+CoreDataProperties.swift in Sources */,
 				985648F4264E594200C453D2 /* Maker+CoreDataClass.swift in Sources */,
+				985648FB264E618000C453D2 /* Equipment+CoreDataProperties.swift in Sources */,
 				985648DE264BA61400C453D2 /* SideMenuContentView.swift in Sources */,
 				3E13C1222648CC2400AAA249 /* SceneDelegate.swift in Sources */,
 				985648EF264E22D100C453D2 /* ShowUserView.swift in Sources */,
@@ -496,14 +504,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"kizai_kanri/Preview Content\"";
-				DEVELOPMENT_TEAM = 287M2UHNL8;
+				DEVELOPMENT_TEAM = NA9D8BNGHU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = kizai_kanri/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-ndwave.kizai-kanri";
+				PRODUCT_BUNDLE_IDENTIFIER = "ndwave.kizai-kanri";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -516,14 +524,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"kizai_kanri/Preview Content\"";
-				DEVELOPMENT_TEAM = 287M2UHNL8;
+				DEVELOPMENT_TEAM = NA9D8BNGHU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = kizai_kanri/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-ndwave.kizai-kanri";
+				PRODUCT_BUNDLE_IDENTIFIER = "ndwave.kizai-kanri";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

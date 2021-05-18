@@ -18,6 +18,24 @@ extension Category {
     }
 
     @NSManaged public var categoryName: String?
+    @NSManaged public var equipments: NSSet?
+
+}
+
+// MARK: Generated accessors for equipments
+extension Category {
+
+    @objc(addEquipmentsObject:)
+    @NSManaged public func addToEquipments(_ value: Equipment)
+
+    @objc(removeEquipmentsObject:)
+    @NSManaged public func removeFromEquipments(_ value: Equipment)
+
+    @objc(addEquipments:)
+    @NSManaged public func addToEquipments(_ values: NSSet)
+
+    @objc(removeEquipments:)
+    @NSManaged public func removeFromEquipments(_ values: NSSet)
 
 }
 
