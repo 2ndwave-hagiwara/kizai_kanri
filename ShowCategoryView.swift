@@ -62,13 +62,13 @@ struct CategoryModalView: View {
             .navigationBarTitle("カテゴリ追加")
             .navigationBarItems(
                 leading:  Button("戻る") {
-                    presentationMode.wrappedValue.dismiss()
+                    self.presentationMode.wrappedValue.dismiss()
                 },
                 trailing: Button("保存") {
-                let newCategory = Category(context: context)
-                newCategory.categoryName = name
-                try? context.save()
-                presentationMode.wrappedValue.dismiss()
+                    let newCategory = Category(context: self.context)
+                    newCategory.categoryName = self.name
+                    try? self.context.save()
+                    self.presentationMode.wrappedValue.dismiss()
                 
             })
         }

@@ -15,7 +15,7 @@ struct ShowEquipmentView: View {
         NavigationView {
             List {
                 ForEach(0 ..< equipments.count) { index in
-                    Text(equipments[index])
+                    Text(self.equipments[index])
                 }
             }
             .navigationBarItems(trailing: Button(action: {

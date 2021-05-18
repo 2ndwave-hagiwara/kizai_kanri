@@ -22,22 +22,24 @@ struct ShowUserView: View {
     @State private var showingModal = false
     let userName = ""
     var body: some View {
-        HStack(spacing: 50){
+        return AnyView(HStack(spacing: 50){
             Spacer()
             Button("+", action: {
                 self.showingModal.toggle()
             }).padding().sheet(isPresented: $showingModal) {
                 UserModalView()
             }
-        }
+        })
 
-        List {
+        return AnyView(List {
             ForEach(users) { user in
-                Text("\(user.firstName!)" + "\(user.lastName!)")
-//                Text("\(user.email!)") なぜか表示できない nil??
+                ViewBuilder.buildBlock(
+                    Text("\(user.firstName!)" + "\(user.lastName!)"),
+                    Text("\(user.email!)")
+                )
             }
             .onDelete(perform: deleteCategory)
-        }
+        })
     }
 
     func deleteCategory(offsets: IndexSet) {
@@ -66,15 +68,15 @@ struct UserModalView: View {
             .navigationBarTitle("ユーザー追加")
             .navigationBarItems(
                 leading:  Button("戻る") {
-                    presentationMode.wrappedValue.dismiss()
+                    self.presentationMode.wrappedValue.dismiss()
                 },
                 trailing: Button("保存") {
-                let newUser = User(context: context)
-                    newUser.firstName = firstName
-                    newUser.lastName = lastName
-                    newUser.email = email
-                try? context.save()
-                presentationMode.wrappedValue.dismiss()
+                    let newUser = User(context: self.context)
+                    newUser.firstName = self.firstName
+                    newUser.lastName = self.lastName
+                    newUser.email = self.email
+                    try? self.context.save()
+                    self.presentationMode.wrappedValue.dismiss()
                 
             })
         }
