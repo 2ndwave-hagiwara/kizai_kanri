@@ -29,6 +29,7 @@ struct ShowCategoryView: View {
                     }
                     .onDelete(perform: deleteCategory)
                 }
+                .navigationBarTitle(Text(""), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: {
                     self.showingModal.toggle()
                 }, label: {

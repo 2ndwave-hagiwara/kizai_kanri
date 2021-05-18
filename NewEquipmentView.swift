@@ -41,31 +41,45 @@ struct NewEquipmentView: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("管理番号", text: $managementNumber)
-                Picker(selection: $makerSelected,
-                       label: Text("メーカー")) {
-                    ForEach(makers, id: \.self) { maker in
-                        Text("\(maker.makerName!)")
+                Section(header: Text("必須項目")){
+                    TextField("管理番号", text: $managementNumber)
+                    Picker(selection: $makerSelected,
+                           label: Text("メーカー")) {
+                        ForEach(makers, id: \.self) { maker in
+                            Text("\(maker.makerName!)")
+                        }
                     }
+                    TextField("モデル名", text: $modelName)
                 }
-                TextField("モデル名", text: $modelName)
-                TextField("種別", text: $equipmentType)
-                Picker(selection: $userSelected,
-                       label: Text("使用者")) {
-                    ForEach(users, id: \.self) { user in
-                        Text("\(user.firstName!)" + "\(user.lastName!)")
+                Section (header: Text("任意")){
+                    TextField("MACアドレス", text: $macAddress)
+                    TextField("ホスト名", text: $hostName)
+                   
+                    Picker(selection: $userSelected,
+                           label: Text("使用者")) {
+                        ForEach(users, id: \.self) { user in
+                            Text("\(user.firstName!)" + "\(user.lastName!)")
+                        }
                     }
+                    TextField("用途", text: $usage)
+                    TextField("メモ・備考", text: $note)
+                    DatePicker(selection: $purchaseDate,
+                               label: {Text("購入日")})
+                    Picker(selection: $userSelected,
+                           label: Text("関連機器(仮でuser表示)")) {
+                        ForEach(users, id: \.self) { user in
+                            Text("\(user.firstName!)" + "\(user.lastName!)")
+                        }
+                    }
+                    TextField("OS", text: $note)
                 }
-                TextField("用途", text: $usage)
-                TextField("メモ・備考", text: $note)
-                DatePicker(selection: $purchaseDate,
-                           label: {Text("購入日")})
-                
+
                 Button(action: {}) {
                     Text("確定")
                 }
             }
-            .navigationBarTitle(categoryName)
+//            .navigationBarTitle(categoryName)
+            .navigationBarTitle(Text(categoryName), displayMode: .inline)
         }
     }
 }

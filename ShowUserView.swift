@@ -22,7 +22,7 @@ struct ShowUserView: View {
     @State private var showingModal = false
     let userName = ""
     var body: some View {
-        return AnyView(HStack(spacing: 50){
+        AnyView(HStack(spacing: 50){
             Spacer()
             Button("+", action: {
                 self.showingModal.toggle()
@@ -31,15 +31,13 @@ struct ShowUserView: View {
             }
         })
 
-        return AnyView(List {
+        List {
             ForEach(users) { user in
-                ViewBuilder.buildBlock(
-                    Text("\(user.firstName!)" + "\(user.lastName!)"),
-                    Text("\(user.email!)")
-                )
+                
+                    Text("\(user.firstName!)" + "\(user.lastName!)" + "\(user.email!)")
             }
             .onDelete(perform: deleteCategory)
-        })
+        }
     }
 
     func deleteCategory(offsets: IndexSet) {
