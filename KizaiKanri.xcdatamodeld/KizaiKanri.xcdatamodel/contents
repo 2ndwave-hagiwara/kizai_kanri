@@ -28,7 +28,7 @@
     </entity>
     <elements>
         <element name="Category" positionX="-63" positionY="-18" width="128" height="59"/>
-        <element name="Equipment" positionX="-9" positionY="54" width="128" height="179"/>
+        <element name="Equipment" positionX="-9" positionY="54" width="128" height="14"/>
         <element name="Maker" positionX="-27" positionY="45" width="128" height="59"/>
         <element name="User" positionX="-45" positionY="9" width="128" height="89"/>
     </elements>
