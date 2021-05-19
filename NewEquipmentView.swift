@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 struct NewEquipmentView: View {
     @Environment(\.managedObjectContext) private var context
@@ -20,10 +21,16 @@ struct NewEquipmentView: View {
     
     @FetchRequest(
         entity: Maker.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \User.objectID, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Maker.objectID, ascending: true)],
         predicate: nil
     ) private var makers: FetchedResults<Maker>
     
+    @FetchRequest(
+        entity: Equipment.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Equipment.objectID, ascending: true)],
+        predicate: nil
+    ) private var equipments: FetchedResults<Equipment>
+
     var categoryName: String = ""
     @State var managementNumber = ""
     @State var modelName = ""
@@ -35,18 +42,38 @@ struct NewEquipmentView: View {
     @State var purchaseDate = Date()
     @State var os = ""
     @State var name = ""
-    @State var userSelected = ""
-    @State var makerSelected = ""
+    @State var userSelected = User()
+    @State var makerSelected = Maker()
+    @State var equipmentSelected = Equipment()
     
+    @State private var image = UIImage()
+    @State private var isShowPhotoLibrary = false
+
     var body: some View {
         NavigationView {
             Form {
+                VStack {
+                   Image(uiImage: self.image)
+                       .resizable()
+                       .scaledToFill()
+                       .frame(minWidth: 0, maxWidth: .infinity)
+                       .edgesIgnoringSafeArea(.all)
+                   Button(action: {
+                       self.isShowPhotoLibrary = true
+                   }, label: {
+                       Text("アルバムから選択")
+                           .padding()
+                   })
+               }
+               .sheet(isPresented: $isShowPhotoLibrary, content: {
+                   ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+               })
                 Section(header: Text("必須項目")){
                     TextField("管理番号", text: $managementNumber)
                     Picker(selection: $makerSelected,
                            label: Text("メーカー")) {
-                        ForEach(makers, id: \.self) { maker in
-                            Text("\(maker.makerName!)")
+                        ForEach(makers, id: \.self) { (maker: Maker) in
+                            Text(maker.makerName!)
                         }
                     }
                     TextField("モデル名", text: $modelName)
@@ -57,7 +84,7 @@ struct NewEquipmentView: View {
                    
                     Picker(selection: $userSelected,
                            label: Text("使用者")) {
-                        ForEach(users, id: \.self) { user in
+                        ForEach(users, id: \.self) { (user: User) in
                             Text("\(user.firstName!)" + "\(user.lastName!)")
                         }
                     }
@@ -65,17 +92,18 @@ struct NewEquipmentView: View {
                     TextField("メモ・備考", text: $note)
                     DatePicker(selection: $purchaseDate,
                                label: {Text("購入日")})
-                    Picker(selection: $userSelected,
-                           label: Text("関連機器(仮でuser表示)")) {
-                        ForEach(users, id: \.self) { user in
-                            Text("\(user.firstName!)" + "\(user.lastName!)")
+                    Picker(selection: $equipmentSelected,
+                           label: Text("関連機器")) {
+                        ForEach(equipments, id: \.self) { (equipment: Equipment) in
+                            Text(equipment.note!)
                         }
                     }
-                    TextField("OS", text: $note)
+                    TextField("OS", text: $os)
                 }
-
+                
                 Button(action: {}) {
                     Text("確定")
+                    
                 }
             }
 //            .navigationBarTitle(categoryName)
