@@ -50,7 +50,6 @@ struct NewEquipmentView: View {
     @State private var isShowPhotoLibrary = false
 
     var body: some View {
-        NavigationView {
             Form {
                 VStack {
                    Image(uiImage: self.image)
@@ -120,10 +119,9 @@ struct NewEquipmentView: View {
                     Text("確定")
                     
                 }
-            }
 //            .navigationBarTitle(categoryName)
-            .navigationBarTitle(Text(categorySelected.categoryName ?? ""), displayMode: .inline)
         }
+        .navigationBarTitle(Text(categorySelected.categoryName ?? ""), displayMode: .inline)
     }
 }
 
