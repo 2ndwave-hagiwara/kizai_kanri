@@ -31,7 +31,6 @@ struct NewEquipmentView: View {
         predicate: nil
     ) private var equipments: FetchedResults<Equipment>
 
-    var categoryName: String = ""
     @State var managementNumber = ""
     @State var modelName = ""
     @State var equipmentType = ""
@@ -42,6 +41,7 @@ struct NewEquipmentView: View {
     @State var purchaseDate = Date()
     @State var os = ""
     @State var name = ""
+    @State var categorySelected = Category()
     @State var userSelected = User()
     @State var makerSelected = Maker()
     @State var equipmentSelected = Equipment()
@@ -95,19 +95,34 @@ struct NewEquipmentView: View {
                     Picker(selection: $equipmentSelected,
                            label: Text("関連機器")) {
                         ForEach(equipments, id: \.self) { (equipment: Equipment) in
-                            Text(equipment.note!)
+                            Text(String(equipment.managementNumber))
                         }
                     }
                     TextField("OS", text: $os)
                 }
                 
-                Button(action: {}) {
+                Button(action: {
+                    let newEquipment = Equipment(context: context)
+                    newEquipment.managementNumber = Int16(managementNumber) ?? 0
+                    newEquipment.modelName = modelName
+                    newEquipment.equipmentType = equipmentType
+                    newEquipment.macAddress = macAddress
+                    newEquipment.hostName = hostName
+                    newEquipment.usage = usage
+                    newEquipment.note = note
+                    newEquipment.purchaseDate = purchaseDate
+                    newEquipment.category = categorySelected
+                    newEquipment.maker = makerSelected
+                    newEquipment.user = userSelected
+                    try? context.save()
+                    
+                }) {
                     Text("確定")
                     
                 }
             }
 //            .navigationBarTitle(categoryName)
-            .navigationBarTitle(Text(categoryName), displayMode: .inline)
+            .navigationBarTitle(Text(categorySelected.categoryName ?? ""), displayMode: .inline)
         }
     }
 }

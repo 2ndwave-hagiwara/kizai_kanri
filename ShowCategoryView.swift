@@ -23,7 +23,7 @@ struct ShowCategoryView: View {
             NavigationView {
                 List {
                     ForEach(categories, id: \.self) { category in
-                        NavigationLink(destination: NewEquipmentView(categoryName: category.categoryName!)) {
+                        NavigationLink(destination: NewEquipmentView(categorySelected: category)) {
                             Text("\(category.categoryName!)")
                         }
                     }

@@ -9,14 +9,22 @@
 //import Foundation
 import SwiftUI
 struct ShowEquipmentView: View {
+    @Environment(\.managedObjectContext) private var context
+
+    @FetchRequest(
+        entity: Equipment.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Equipment.objectID, ascending: true)],
+        predicate: nil
+    ) private var equipments: FetchedResults<Equipment>
     @State private var showingModal = false
-    let equipments = ["機材1", "機材2", "機材3", "機材4", "機材5", "機材6", "機材7", "機材8", "機材9", "機材10", "機材11", "機材12", "機材13"]
+
     var body: some View {
         NavigationView {
             List {
-                ForEach(0 ..< equipments.count) { index in
-                    Text(self.equipments[index])
+                ForEach(equipments) { equipment in
+                    Text(String(equipment.managementNumber))
                 }
+                .onDelete(perform: deleteCategory)
             }
             .navigationBarItems(trailing: Button(action: {
                 self.showingModal.toggle()
@@ -26,6 +34,12 @@ struct ShowEquipmentView: View {
                 EquipmentModalView()
             })
         }
+    }
+    func deleteCategory(offsets: IndexSet) {
+        for index in offsets {
+            context.delete(equipments[index])
+        }
+        try? context.save()
     }
 }
 

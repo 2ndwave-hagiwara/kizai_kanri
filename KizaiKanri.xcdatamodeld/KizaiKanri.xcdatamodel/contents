@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H1030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Category" representedClassName="Category" syncable="YES">
         <attribute name="categoryName" optional="YES" attributeType="String"/>
         <relationship name="equipments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Equipment" inverseName="category" inverseEntity="Equipment"/>
     </entity>
     <entity name="Equipment" representedClassName="Equipment" syncable="YES">
         <attribute name="equipmentType" optional="YES" attributeType="String"/>
+        <attribute name="hostName" optional="YES" attributeType="String"/>
+        <attribute name="macAddress" optional="YES" attributeType="String"/>
         <attribute name="managementNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="modelName" optional="YES" attributeType="String"/>
         <attribute name="note" optional="YES" attributeType="String"/>
@@ -13,6 +15,7 @@
         <attribute name="purchaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="usage" optional="YES" attributeType="String"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="equipments" inverseEntity="Category"/>
+        <relationship name="equipment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Equipment" inverseName="equipment" inverseEntity="Equipment"/>
         <relationship name="maker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Maker" inverseName="equipments" inverseEntity="Maker"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="equipments" inverseEntity="User"/>
     </entity>
@@ -28,7 +31,7 @@
     </entity>
     <elements>
         <element name="Category" positionX="-63" positionY="-18" width="128" height="59"/>
-        <element name="Equipment" positionX="-9" positionY="54" width="128" height="14"/>
+        <element name="Equipment" positionX="-9" positionY="54" width="128" height="238"/>
         <element name="Maker" positionX="-27" positionY="45" width="128" height="59"/>
         <element name="User" positionX="-45" positionY="9" width="128" height="89"/>
     </elements>
