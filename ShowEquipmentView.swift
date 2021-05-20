@@ -26,13 +26,6 @@ struct ShowEquipmentView: View {
                 }
                 .onDelete(perform: deleteCategory)
             }
-            .navigationBarItems(trailing: Button(action: {
-                self.showingModal.toggle()
-            }, label: {
-                Text("+")
-            }).sheet(isPresented: $showingModal) {
-                EquipmentModalView()
-            })
         }
     }
     func deleteCategory(offsets: IndexSet) {

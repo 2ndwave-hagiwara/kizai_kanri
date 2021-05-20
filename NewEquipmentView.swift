@@ -78,6 +78,7 @@ struct NewEquipmentView: View {
                     TextField("モデル名", text: $modelName)
                 }
                 Section (header: Text("任意")){
+                    TextField("種別", text: $equipmentType)
                     TextField("MACアドレス", text: $macAddress)
                     TextField("ホスト名", text: $hostName)
                    
