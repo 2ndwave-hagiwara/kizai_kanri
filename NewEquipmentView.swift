@@ -31,6 +31,8 @@ struct NewEquipmentView: View {
         predicate: nil
     ) private var equipments: FetchedResults<Equipment>
 
+    @State var showingPopUp = false
+    
     @State var managementNumber = ""
     @State var modelName = ""
     @State var equipmentType = ""
@@ -95,15 +97,27 @@ struct NewEquipmentView: View {
                     Picker(selection: $equipmentSelected,
                            label: Text("関連機器")) {
                         ForEach(equipments, id: \.self) { (equipment: Equipment) in
-                            Text(String(equipment.managementNumber))
+                            Text(equipment.managementNumber ?? "")
                         }
                     }
                     TextField("OS", text: $os)
                 }
                 
                 Button(action: {
+                    if managementNumber == "" || modelName == "" || makerSelected == nil  {
+                        withAnimation {
+                            showingPopUp = true
+                        }
+                    }
+                    if showingPopUp {
+                        PopupView(isPresent: $showingPopUp)
+                    }
+                    
+                    if userSelected == nil {
+                        userSelected = users[0]
+                    }
                     let newEquipment = Equipment(context: context)
-                    newEquipment.managementNumber = Int16(managementNumber) ?? 0
+                    newEquipment.managementNumber = managementNumber
                     newEquipment.modelName = modelName
                     newEquipment.equipmentType = equipmentType
                     newEquipment.macAddress = macAddress
@@ -123,6 +137,29 @@ struct NewEquipmentView: View {
 //            .navigationBarTitle(categoryName)
         }
         .navigationBarTitle(Text(categorySelected.categoryName ?? ""), displayMode: .inline)
+    }
+}
+
+struct PopupView: View {
+    @Binding var isPresent: Bool
+    var body: some View {
+        VStack(spacing: 12) {
+            
+            Text("必須項目を入力してください")
+                .font(Font.system(size: 18))
+            
+            Button(action: {
+                withAnimation {
+                    isPresent = false
+                }
+            }, label: {
+                Text("Close")
+            })
+        }
+        .frame(width: 280, alignment: .center)
+        .padding()
+        .background(Color.white)
+        .cornerRadius(12)
     }
 }
 
