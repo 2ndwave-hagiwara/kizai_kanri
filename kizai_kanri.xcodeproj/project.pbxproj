@@ -32,6 +32,7 @@
 		985648F7264E596C00C453D2 /* ShowMakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648F6264E596C00C453D2 /* ShowMakerView.swift */; };
 		985648FA264E618000C453D2 /* Equipment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648F8264E618000C453D2 /* Equipment+CoreDataClass.swift */; };
 		985648FB264E618000C453D2 /* Equipment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648F9264E618000C453D2 /* Equipment+CoreDataProperties.swift */; };
+		98CEEB9C265783C400C5FD4E /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CEEB9B265783C400C5FD4E /* CoreDataModel.swift */; };
 		98D752592653AB92006C0476 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D752582653AB92006C0476 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		985648F6264E596C00C453D2 /* ShowMakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMakerView.swift; sourceTree = "<group>"; };
 		985648F8264E618000C453D2 /* Equipment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Equipment+CoreDataClass.swift"; sourceTree = "<group>"; };
 		985648F9264E618000C453D2 /* Equipment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Equipment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		98CEEB9B265783C400C5FD4E /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		98D752582653AB92006C0476 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			children = (
 				985648F8264E618000C453D2 /* Equipment+CoreDataClass.swift */,
 				985648F9264E618000C453D2 /* Equipment+CoreDataProperties.swift */,
+				98CEEB9B265783C400C5FD4E /* CoreDataModel.swift */,
 				985648F2264E594200C453D2 /* Maker+CoreDataClass.swift */,
 				985648F3264E594200C453D2 /* Maker+CoreDataProperties.swift */,
 				985648EE264E22D100C453D2 /* ShowUserView.swift */,
@@ -321,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98CEEB9C265783C400C5FD4E /* CoreDataModel.swift in Sources */,
 				985648D8264B6FDC00C453D2 /* ShowEquipmentView.swift in Sources */,
 				985648E1264E028600C453D2 /* KizaiKanri.xcdatamodeld in Sources */,
 				985648EC264E226A00C453D2 /* User+CoreDataClass.swift in Sources */,
