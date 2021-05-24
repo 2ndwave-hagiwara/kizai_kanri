@@ -32,6 +32,7 @@ struct NewEquipmentView: View {
     ) private var equipments: FetchedResults<Equipment>
 
     @State var showingPopUp = false
+    @Binding var isCreateEquipment: Bool
     
     @State var managementNumber = ""
     @State var modelName = ""
@@ -97,38 +98,38 @@ struct NewEquipmentView: View {
                     Picker(selection: $equipmentSelected,
                            label: Text("関連機器")) {
                         ForEach(equipments, id: \.self) { (equipment: Equipment) in
-                            Text(equipment.managementNumber ?? "")
+                            Text(String(equipment.managementNumber))
                         }
                     }
                     TextField("OS", text: $os)
                 }
                 
                 Button(action: {
-                    if managementNumber == "" || modelName == "" || makerSelected == nil  {
+                    if managementNumber == "" || modelName == "" || makerSelected.objectID == nil  {
                         withAnimation {
                             showingPopUp = true
                         }
-                    }
-                    if showingPopUp {
-                        PopupView(isPresent: $showingPopUp)
-                    }
+                    }else {
                     
-                    if userSelected == nil {
-                        userSelected = users[0]
+                        if userSelected.objectID == nil {
+                            userSelected = users[0]
+                        }
+                        let newEquipment = Equipment(context: context)
+                        newEquipment.managementNumber = Int16(managementNumber) ?? 0
+                        newEquipment.modelName = modelName
+                        newEquipment.equipmentType = equipmentType
+                        newEquipment.macAddress = macAddress
+                        newEquipment.hostName = hostName
+                        newEquipment.usage = usage
+                        newEquipment.note = note
+                        newEquipment.purchaseDate = purchaseDate
+                        newEquipment.category = categorySelected
+                        newEquipment.maker = makerSelected
+                        newEquipment.user = userSelected
+                        try? context.save()
+                        
+                        isCreateEquipment = false
                     }
-                    let newEquipment = Equipment(context: context)
-                    newEquipment.managementNumber = managementNumber
-                    newEquipment.modelName = modelName
-                    newEquipment.equipmentType = equipmentType
-                    newEquipment.macAddress = macAddress
-                    newEquipment.hostName = hostName
-                    newEquipment.usage = usage
-                    newEquipment.note = note
-                    newEquipment.purchaseDate = purchaseDate
-                    newEquipment.category = categorySelected
-                    newEquipment.maker = makerSelected
-                    newEquipment.user = userSelected
-                    try? context.save()
                     
                 }) {
                     Text("確定")
@@ -136,30 +137,11 @@ struct NewEquipmentView: View {
                 }
 //            .navigationBarTitle(categoryName)
         }
+        .alert(isPresented: $showingPopUp) {
+            Alert(title: Text("登録エラー"),
+                  message: Text("必須項目を入力してください"),
+                  dismissButton: .default(Text("Close")))
+        }
         .navigationBarTitle(Text(categorySelected.categoryName ?? ""), displayMode: .inline)
     }
 }
-
-struct PopupView: View {
-    @Binding var isPresent: Bool
-    var body: some View {
-        VStack(spacing: 12) {
-            
-            Text("必須項目を入力してください")
-                .font(Font.system(size: 18))
-            
-            Button(action: {
-                withAnimation {
-                    isPresent = false
-                }
-            }, label: {
-                Text("Close")
-            })
-        }
-        .frame(width: 280, alignment: .center)
-        .padding()
-        .background(Color.white)
-        .cornerRadius(12)
-    }
-}
-

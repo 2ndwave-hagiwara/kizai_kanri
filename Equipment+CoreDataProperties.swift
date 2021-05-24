@@ -2,7 +2,7 @@
 //  Equipment+CoreDataProperties.swift
 //  kizai_kanri
 //
-//  Created by hagiwara on 2021/05/21.
+//  Created by hagiwara on 2021/05/24.
 //  Copyright © 2021 hagiwara. All rights reserved.
 //
 //
@@ -20,7 +20,7 @@ extension Equipment {
     @NSManaged public var equipmentType: String?
     @NSManaged public var hostName: String?
     @NSManaged public var macAddress: String?
-    @NSManaged public var managementNumber: String?
+    @NSManaged public var managementNumber: Int16
     @NSManaged public var modelName: String?
     @NSManaged public var note: String?
     @NSManaged public var os: String?

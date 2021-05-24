@@ -10,6 +10,8 @@
 import SwiftUI
 
 struct MenuView: View {
+    @State var isCreateEquipment = true
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -25,7 +27,7 @@ struct MenuView: View {
                     }
                     HStack {
                         
-                            NavigationLink(destination: ShowCategoryView()) {
+                        NavigationLink(destination: ShowCategoryView(isCreateEquipment: $isCreateEquipment)) {
                                 Text("新規登録")
                             }
 

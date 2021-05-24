@@ -11,6 +11,7 @@ import SwiftUI
 
 struct ShowCategoryView: View {
     @Environment(\.managedObjectContext) private var context
+    @Binding var isCreateEquipment: Bool
 
     @FetchRequest(
         entity: Category.entity(),
@@ -23,7 +24,7 @@ struct ShowCategoryView: View {
             NavigationView {
                 List {
                     ForEach(categories, id: \.self) { category in
-                        NavigationLink(destination: NewEquipmentView(categorySelected: category)) {
+                        NavigationLink(destination: NewEquipmentView(isCreateEquipment: $isCreateEquipment ,categorySelected: category)) {
                             Text("\(category.categoryName!)")
                         }
                     }

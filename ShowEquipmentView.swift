@@ -22,7 +22,7 @@ struct ShowEquipmentView: View {
         NavigationView {
             List {
                 ForEach(equipments) { equipment in
-                    Text(String(equipment.managementNumber!))
+                    Text(String(equipment.managementNumber))
                 }
                 .onDelete(perform: deleteCategory)
             }

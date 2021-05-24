@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isOpenSideMenu: Bool = false
+    @State var isCreateEquipment = true
     @State var text = "機材一覧"
     @State var menu = ""
     var body: some View {
@@ -17,7 +18,7 @@ struct ContentView: View {
             NavigationView {
                 Group {
                     if self.menu == "category" {
-                        ShowCategoryView()
+                        ShowCategoryView(isCreateEquipment: $isCreateEquipment)
                     } else if self.menu == "maker" {
                         ShowMakerView()
                     } else if self.menu == "user" {
