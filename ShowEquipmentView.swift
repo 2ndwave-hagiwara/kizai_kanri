@@ -28,11 +28,11 @@ struct ShowEquipmentView: View {
 //            }
             List {
                 ForEach(self.equipments, id: \.self) { equipment in
-                    NavigationLink(destination: NewEquipmentView(categorySelected: equipment.category!)) {
+                    NavigationLink(destination: EditEquipmentView(equipment: equipment, categorySelected: equipment.category!)) {
 //                        EquipmentRowView(equipment: equipment)
-                        Text(equipment.equipmentType!)
+                        Text(String(equipment.managementNumber))
                     }
-                }
+                }.onDelete(perform: deleteCategory)
             }
         }
     }

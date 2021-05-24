@@ -33,6 +33,7 @@
 		985648FA264E618000C453D2 /* Equipment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648F8264E618000C453D2 /* Equipment+CoreDataClass.swift */; };
 		985648FB264E618000C453D2 /* Equipment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985648F9264E618000C453D2 /* Equipment+CoreDataProperties.swift */; };
 		98CEEB9C265783C400C5FD4E /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CEEB9B265783C400C5FD4E /* CoreDataModel.swift */; };
+		98CEEB9E265B358100C5FD4E /* EditEquipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CEEB9D265B358100C5FD4E /* EditEquipmentView.swift */; };
 		98D752592653AB92006C0476 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D752582653AB92006C0476 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		985648F8264E618000C453D2 /* Equipment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Equipment+CoreDataClass.swift"; sourceTree = "<group>"; };
 		985648F9264E618000C453D2 /* Equipment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Equipment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		98CEEB9B265783C400C5FD4E /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		98CEEB9D265B358100C5FD4E /* EditEquipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEquipmentView.swift; sourceTree = "<group>"; };
 		98D752582653AB92006C0476 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				985648DF264E028600C453D2 /* KizaiKanri.xcdatamodeld */,
 				985648D7264B6FDC00C453D2 /* ShowEquipmentView.swift */,
 				985648F0264E43F400C453D2 /* NewEquipmentView.swift */,
+				98CEEB9D265B358100C5FD4E /* EditEquipmentView.swift */,
 				98D752582653AB92006C0476 /* ImagePicker.swift */,
 				985648D9264B8DB200C453D2 /* ShowCategoryView.swift */,
 				985648F6264E596C00C453D2 /* ShowMakerView.swift */,
@@ -330,6 +333,7 @@
 				985648EC264E226A00C453D2 /* User+CoreDataClass.swift in Sources */,
 				98D752592653AB92006C0476 /* ImagePicker.swift in Sources */,
 				985648DC264BA5D200C453D2 /* SideMenuView.swift in Sources */,
+				98CEEB9E265B358100C5FD4E /* EditEquipmentView.swift in Sources */,
 				985648F7264E596C00C453D2 /* ShowMakerView.swift in Sources */,
 				985648FA264E618000C453D2 /* Equipment+CoreDataClass.swift in Sources */,
 				985648E4264E02CB00C453D2 /* Category+CoreDataClass.swift in Sources */,
