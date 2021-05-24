@@ -105,20 +105,20 @@ struct EditEquipmentView: View {
                 }
                 
                 Button(action: {
-                    let Equipment = Equipment(context: context)
-                    Equipment.managementNumber = Int16(managementNumber) ?? 0
-                    Equipment.modelName = modelName
-                    Equipment.equipmentType = equipmentType
-                    Equipment.macAddress = macAddress
-                    Equipment.hostName = hostName
-                    Equipment.usage = usage
-                    Equipment.note = note
-                    Equipment.purchaseDate = purchaseDate
-                    Equipment.category = categorySelected
-                    Equipment.maker = makerSelected
-                    Equipment.user = userSelected
-                    Equipment.os = os
-                    presentationMode.wrappedValue.dismiss()
+//                    let Equipment = Equipment(context: context)
+                    self.equipment.managementNumber = Int16(managementNumber) ?? 0
+                    self.equipment.modelName = modelName
+                    self.equipment.equipmentType = equipmentType
+                    self.equipment.macAddress = macAddress
+                    self.equipment.hostName = hostName
+                    self.equipment.usage = usage
+                    self.equipment.note = note
+                    self.equipment.purchaseDate = purchaseDate
+                    self.equipment.category = categorySelected
+                    self.equipment.maker = makerSelected
+                    self.equipment.user = userSelected
+                    self.equipment.os = os
+                    try? self.context.save()
                     self.presentationMode.wrappedValue.dismiss()
                     
                 }) {
