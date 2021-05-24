@@ -20,11 +20,19 @@ struct ShowEquipmentView: View {
 
     var body: some View {
         NavigationView {
+//            List {
+//                ForEach(equipments) { equipment in
+//                    Text(String(equipment.managementNumber))
+//                }
+//                .onDelete(perform: deleteCategory)
+//            }
             List {
-                ForEach(equipments) { equipment in
-                    Text(String(equipment.managementNumber))
-                }
-                .onDelete(perform: deleteCategory)
+                ForEach(self.equipments, id: \.self) { equipment in
+                    NavigationLink(destination: EditEquipmentView(equipment: equipment, categorySelected: equipment.category!)) {
+//                        EquipmentRowView(equipment: equipment)
+                        Text(String(equipment.managementNumber))
+                    }
+                }.onDelete(perform: deleteCategory)
             }
         }
     }
@@ -47,3 +55,12 @@ struct EquipmentModalView: View {
 //        EquipmentModalView()
 //    }
 //}
+struct EquipmentRowView: View {
+    // 引数に@ObservedObjectを付与
+    @ObservedObject var equipment: Equipment
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(equipment.equipmentType!).font(.headline)
+        }
+    }
+}

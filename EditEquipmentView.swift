@@ -1,8 +1,8 @@
 //
-//  NewEquipmentView.swift
+//  EditEquipmentView.swift
 //  kizai_kanri
 //
-//  Created by 仲吉一馬 on 2021/05/14.
+//  Created by 仲吉一馬 on 2021/05/24.
 //  Copyright © 2021 hagiwara. All rights reserved.
 //
 
@@ -10,8 +10,9 @@ import Foundation
 import SwiftUI
 import CoreData
 
-struct NewEquipmentView: View {
+struct EditEquipmentView: View {
     @Environment(\.managedObjectContext) private var context
+    @Environment(\.presentationMode) var presentationMode
 
     @FetchRequest(
         entity: User.entity(),
@@ -30,10 +31,7 @@ struct NewEquipmentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Equipment.objectID, ascending: true)],
         predicate: nil
     ) private var equipments: FetchedResults<Equipment>
-
-    @State var showingPopUp = false
-    @Binding var isCreateEquipment: Bool
-    
+    var equipment: Equipment
     @State var managementNumber = ""
     @State var modelName = ""
     @State var equipmentType = ""
@@ -51,6 +49,8 @@ struct NewEquipmentView: View {
     
     @State private var image = UIImage()
     @State private var isShowPhotoLibrary = false
+
+    @State private var loadFlg = true
 
     var body: some View {
             Form {
@@ -105,44 +105,47 @@ struct NewEquipmentView: View {
                 }
                 
                 Button(action: {
-                    if managementNumber == "" || modelName == "" || makerSelected.objectID == nil  {
-                        withAnimation {
-                            showingPopUp = true
-                        }
-                    }else {
-                    
-                        if userSelected.objectID == nil {
-                            userSelected = users[0]
-                        }
-                        let newEquipment = Equipment(context: context)
-                        newEquipment.managementNumber = Int16(managementNumber) ?? 0
-                        newEquipment.modelName = modelName
-                        newEquipment.equipmentType = equipmentType
-                        newEquipment.macAddress = macAddress
-                        newEquipment.hostName = hostName
-                        newEquipment.usage = usage
-                        newEquipment.note = note
-                        newEquipment.purchaseDate = purchaseDate
-                        newEquipment.category = categorySelected
-                        newEquipment.maker = makerSelected
-                        newEquipment.user = userSelected
-                        newEquipment.os = os
-                        try? context.save()
-                        
-                        isCreateEquipment = false
-                    }
+                    let Equipment = Equipment(context: context)
+                    Equipment.managementNumber = Int16(managementNumber) ?? 0
+                    Equipment.modelName = modelName
+                    Equipment.equipmentType = equipmentType
+                    Equipment.macAddress = macAddress
+                    Equipment.hostName = hostName
+                    Equipment.usage = usage
+                    Equipment.note = note
+                    Equipment.purchaseDate = purchaseDate
+                    Equipment.category = categorySelected
+                    Equipment.maker = makerSelected
+                    Equipment.user = userSelected
+                    Equipment.os = os
+                    presentationMode.wrappedValue.dismiss()
+                    self.presentationMode.wrappedValue.dismiss()
                     
                 }) {
                     Text("確定")
                     
                 }
 //            .navigationBarTitle(categoryName)
-        }
-        .alert(isPresented: $showingPopUp) {
-            Alert(title: Text("登録エラー"),
-                  message: Text("必須項目を入力してください"),
-                  dismissButton: .default(Text("Close")))
-        }
+            }.onAppear(perform: {
+                if self.loadFlg == false {
+                    return
+                } else {
+                    self.loadFlg = false
+                }
+                self.managementNumber = String(self.equipment.managementNumber)
+                self.modelName = self.equipment.modelName!
+                self.equipmentType = self.equipment.equipmentType!
+                self.macAddress = self.equipment.macAddress!
+                self.hostName = self.equipment.hostName!
+                self.usage = self.equipment.usage!
+                self.note = self.equipment.note!
+                self.purchaseDate = self.equipment.purchaseDate!
+                self.categorySelected = self.equipment.category!
+                self.makerSelected = self.equipment.maker!
+                self.userSelected = self.equipment.user!
+                self.os = self.equipment.os!
+            })
         .navigationBarTitle(Text(categorySelected.categoryName ?? ""), displayMode: .inline)
     }
 }
+

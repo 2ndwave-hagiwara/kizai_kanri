@@ -20,5 +20,101 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "050CA189-8EDA-4D5F-99EB-B8F628230AFF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShowMakerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "810FF572-90DD-4A82-9614-C7290CDA8551"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShowEquipmentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "810FF572-90DD-4A82-9614-C7290CDA8551 - a5b028d8662dd9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (kizai_kanri.Equipment) -&gt; SwiftUI.NavigationLink&lt;SwiftUI.Text, kizai_kanri.NewEquipmentView&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;kizai_kanri.Equipment&gt;, kizai_kanri.Equipment, SwiftUI.NavigationLink&lt;SwiftUI.Text, kizai_kanri.NewEquipmentView&gt;&gt; in closure #1 () -&gt; SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;kizai_kanri.Equipment&gt;, kizai_kanri.Equipment, SwiftUI.NavigationLink&lt;SwiftUI.Text, kizai_kanri.NewEquipmentView&gt;&gt;&gt; in kizai_kanri.ShowEquipmentView.body.getter : some"
+                  moduleName = "kizai_kanri"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nakayoshikazuma/projects/kizai_kanri/ShowEquipmentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "239">
+               </Location>
+               <Location
+                  uuid = "810FF572-90DD-4A82-9614-C7290CDA8551 - a570a5055110412e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.Text in closure #1 (kizai_kanri.Equipment) -&gt; SwiftUI.NavigationLink&lt;SwiftUI.Text, kizai_kanri.NewEquipmentView&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;kizai_kanri.Equipment&gt;, kizai_kanri.Equipment, SwiftUI.NavigationLink&lt;SwiftUI.Text, kizai_kanri.NewEquipmentView&gt;&gt; in closure #1 () -&gt; SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;kizai_kanri.Equipment&gt;, kizai_kanri.Equipment, SwiftUI.NavigationLink&lt;SwiftUI.Text, kizai_kanri.NewEquipmentView&gt;&gt;&gt; in kizai_kanri.ShowEquipmentView.body.getter : some"
+                  moduleName = "kizai_kanri"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nakayoshikazuma/projects/kizai_kanri/ShowEquipmentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "114">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9BA973B1-EB8E-4771-9B06-7B5C67C9ACCB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EditEquipmentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61FBF07B-786E-4A13-B04F-8B5649B8D26B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equipment+CoreDataProperties.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "Equipment"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
